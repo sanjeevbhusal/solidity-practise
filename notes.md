@@ -36,4 +36,13 @@
 - A signer has access to the private key.
 - Metamask can act as a signer as it allows us to perform operations and signs the operation using our private key.
 - Libraries like Ethers.js can also act as a signer as they have functionalities to sign the operation using our private
-  key. 
+  key.
+- Both Metamask and Ethers allows us to choose our Max Fee, Priority Fee etc.
+
+#### Contract Factory
+
+- Contract Factory is available in ethers library.
+- It is used to deploy the contract.
+- Contract Factory needs the information about contract abi, contract binary
+  and information about wallet( RPC URL, private key)
+- It returns a contract object
