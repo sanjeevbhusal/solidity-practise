@@ -19,3 +19,21 @@
 
 - The information about methods available and sending in the correct format is available at:
   https://playground.open-rpc.org/?schemaUrl=https://raw.githubusercontent.com/ethereum/execution-apis/assembled-spec/openrpc.json&uiSchema%5BappBar%5D%5Bui:splitView%5D=false&uiSchema%5BappBar%5D%5Bui:input%5D=false&uiSchema%5BappBar%5D%5Bui:examplesDropdown%5D=false
+
+### Terminology
+
+#### Provider
+
+- A provider is something that allows us to connect to a blockchain.
+  A provider provides a very simple interface (via abstraction).
+- Metamask can act as a provider as it allows us to connect to any different blockchain providers.
+- Libraries like Ethers.js can also act as a provider as they have functionalities to connect to different blockchain
+  providers
+
+#### Signer
+
+- A signer is something that allows us to sign a message or a transaction.
+- A signer has access to the private key.
+- Metamask can act as a signer as it allows us to perform operations and signs the operation using our private key.
+- Libraries like Ethers.js can also act as a signer as they have functionalities to sign the operation using our private
+  key. 
