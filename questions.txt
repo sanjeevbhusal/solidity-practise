@@ -1,0 +1,6 @@
+RPC URL for ethereum mainnet seems to be pretty generic.
+My understanding:
+1) All providers send their transaction to this URL
+2) All nodes in the network do a API call to this network to fetch all the transactions received.
+3) But isn't this centralized ? Then whats the purpose of exposing your own RPC URL ?
+
