@@ -90,3 +90,14 @@
 - Javascript will round up numbers after a certain point.
 - A 1 ether is 10^18 wei, it is not possible to represent it in javascript.
 - So, ethers library uses BigNumber to represent wei.
+
+### Alchemy
+
+- Alchemy has a node as a service.
+- It allows us to connect to any blockchain that they support.
+- While creating a application on Alchemy, we can choose the blockchain, and we will get a RPC URL.
+- The RPC URL is a connection to a node run by Alchemy. The node will process our transaction and add it to the
+  blockchain
+- We also need to have an account on that blockchain in order to sign transactions.
+- Deploying on a main network or test network takes more time as compared to local network like Ganache.
+- This is because main/test network have to propagate blocks, wait for some time to add a block etc  

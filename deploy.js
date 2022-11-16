@@ -24,6 +24,7 @@ async function getNumberOfZombies(contract) {
 async function deployContract(contractFactory, wait = 1) {
     const contract = await contractFactory.deploy()
     await contract.deployTransaction.wait(wait)
+    console.log(contract.address)
     return contract
 }
 
@@ -34,20 +35,20 @@ async function main() {
     const contractFactory = await getContractFactory(RPC_URL, PRIVATE_KEY, abi, binary)
     const contract = await deployContract(contractFactory, 1)
 
-    let numberOfZombies = await getNumberOfZombies(contract)
-    console.log(numberOfZombies)
-
-    const transactionResponse = await contract.addZombie(1, "zombie 1")
-    await transactionResponse.wait(1)
-
-    numberOfZombies = await getNumberOfZombies(contract)
-    console.log(numberOfZombies)
+    // let numberOfZombies = await getNumberOfZombies(contract)
+    // console.log(numberOfZombies)
+    //
+    // const transactionResponse = await contract.addZombie(1, "zombie 1")
+    // await transactionResponse.wait(1)
+    //
+    // numberOfZombies = await getNumberOfZombies(contract)
+    // console.log(numberOfZombies)
 }
 
 await main()
 
 
-// 7: 25: 18
+// 8: 04: 33
 
 
 
