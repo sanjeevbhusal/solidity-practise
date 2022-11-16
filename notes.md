@@ -51,8 +51,8 @@
 
 - After deploying a transaction, you get the contract object back.
 - The contract object has a property called deployTransaction.
-- This property contains information about the transaction such as nonce, transaction data, gasPrice,
-  transaction hash, blockConfirmations etc
+- This property contains information about the transaction such as nonce, transaction data, gasPrice, gasLimit
+  transaction hash, blockConfirmations etc.
 - deployTransaction object also has a method called wait.
 - The method is used to wait for certain blocks to be added to blockchain.
 -
@@ -68,3 +68,14 @@
 
 - Nonce, when talking about Blockchain mining is used to solve the puzzle for consensus mechanism.
 - Nonce, when talking about Wallets talks about the unique number associated with each transaction.
+- wallet.getTransactionCount() gives the current nonce number of the blockchain.
+
+### Chain Id (Network Id)
+
+- Each blockchain has a unique chain Id.
+
+### Creating a transaction yourself
+
+- While deploying a contract using ethers.js, a lot of information about the transaction such as nonce, gasPrice,
+  gasLimit, chainId etc are filled automatically.
+- However, we can create our own transaction object by specifying all that information and use that.
