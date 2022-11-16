@@ -1,8 +1,12 @@
 import {ethers} from "ethers"
 import {readFile} from 'fs/promises'
+import * as dotenv from 'dotenv'
 
-const RPC_URL = "http://127.0.0.1:7545"
-const PRIVATE_KEY = "dedf3f1187eda2022900d7e33d56b1048197e50efd7435114f3c4fbc735c92f8"
+dotenv.config()
+
+
+const PRIVATE_KEY = process.env.PRIVATE_KEY
+const RPC_URL = process.env.RPC_URL
 
 
 async function getContractFactory(rpcUrl, privateKey, abi, binary) {
