@@ -9,6 +9,10 @@ contract SimpleStorage {
         string name;
     }
 
+    function totalZombies() public view returns (uint) {
+        return zombie_list.length;
+    }
+
 
     Zombie[] public zombie_list;
 

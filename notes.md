@@ -79,3 +79,14 @@
 - While deploying a contract using ethers.js, a lot of information about the transaction such as nonce, gasPrice,
   gasLimit, chainId etc are filled automatically.
 - However, we can create our own transaction object by specifying all that information and use that.
+
+### Contract Object
+
+- The contract object has all the methods for interacting with the smart contract.
+- That's why we need to pass abi to contract factory.
+
+### Big Number
+
+- Javascript will round up numbers after a certain point.
+- A 1 ether is 10^18 wei, it is not possible to represent it in javascript.
+- So, ethers library uses BigNumber to represent wei.
