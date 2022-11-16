@@ -2,7 +2,7 @@ import {ethers} from "ethers"
 import {readFile} from 'fs/promises'
 
 const RPC_URL = "http://127.0.0.1:7545"
-const PRIVATE_KEY = "644d4385379409d625ce3a4197b43da2ecd3e4851a4e59e03341df8201e595bb"
+const PRIVATE_KEY = "d5ef53d0255868caa4bb5f0452650a06792467a8edeb667deaf9075c18ca4bfc"
 
 // create a provider
 const provider = new ethers.providers.JsonRpcProvider(RPC_URL);
@@ -21,7 +21,12 @@ const contractFactory = new ethers.ContractFactory(abi, binary, wallet)
 // you can pass overrides like maxGasFee, priorityFee etc to deploy function
 console.log("Deploying the contract")
 const contract = await contractFactory.deploy()
-console.log(contract)
+const transactionInformation = contract.deployTransaction
+console.log("-------------------------------")
+const transactionReceipt = await contract.deployTransaction.wait(1)
+
+
+// 7: 12: 18
 
 
 

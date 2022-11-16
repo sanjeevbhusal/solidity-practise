@@ -46,3 +46,25 @@
 - Contract Factory needs the information about contract abi, contract binary
   and information about wallet( RPC URL, private key)
 - It returns a contract object
+
+## Deploying transaction
+
+- After deploying a transaction, you get the contract object back.
+- The contract object has a property called deployTransaction.
+- This property contains information about the transaction such as nonce, transaction data, gasPrice,
+  transaction hash, blockConfirmations etc
+- deployTransaction object also has a method called wait.
+- The method is used to wait for certain blocks to be added to blockchain.
+-
+- When you deploy your transaction, you are just creating a transaction. You get transaction information in the
+- contract.deployTransaction object.
+- The transaction has not yet been confirmed into the block and added to the blockchain.
+- So, you can wait for few blocks to be mined. Hopefully, your transaction has been added into the blockchain by now.
+- Block Explorers can also now find your contract.
+- The response of the wait method will be information regarding the sender address, receiver address, gasUsed,
+- in which the transaction is included, etc
+
+### Nonce (Number only used once)
+
+- Nonce, when talking about Blockchain mining is used to solve the puzzle for consensus mechanism.
+- Nonce, when talking about Wallets talks about the unique number associated with each transaction.
