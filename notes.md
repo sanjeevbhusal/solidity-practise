@@ -49,7 +49,13 @@
 
 ## Deploying transaction
 
-- After deploying a transaction, you get the contract object back.
+- When deploying a contract, ethers.js does a bunch of API calls to the RPC Url to get the necessary information needed
+  to create a transaction object such as getting the chainId, getting correct nonce etc.
+- All these calls follow a similar pattern discussed above in **JSON RPC URL CONNECTION**
+- After deploying a transaction, you get a contract object back.
+- This contract object is obtained by doing many API calls to the node behind RPC URl
+- Depending upon user's need, ethers can do a bunch of API calls like getting Transaction Receipt, getting block Number
+  etc.
 - The contract object has a property called deployTransaction.
 - This property contains information about the transaction such as nonce, transaction data, gasPrice, gasLimit
   transaction hash, blockConfirmations etc.
@@ -100,4 +106,18 @@
   blockchain
 - We also need to have an account on that blockchain in order to sign transactions.
 - Deploying on a main network or test network takes more time as compared to local network like Ganache.
-- This is because main/test network have to propagate blocks, wait for some time to add a block etc  
+- This is because main/test network have to propagate blocks, wait for some time to add a block etc
+- Whenever you deploy/interact with your contract using alchemy's RPC Url, all the information is getting logged.
+- You can view all the API calls that ethers did behind the scenes using Alchemy's dashboard.
+
+### Etherscan
+
+- Once you have deployed your contract on a main net or test net, you can view all the transactions using the memory
+  address of the contract.
+- Additionally, you can also verify your smart contract by pasting the source code. This gives security because people
+  can actually see the source code of the contract they are interacting with.
+- To verify, Etherscan compiles the source code and generates binary data and abi.
+- Then it compares the binary data to the contract's binary data.
+- If binary data matches, it is proved that the source code is actually correct.
+- However, you can also do the same verification programmatically using API provided by Etherscan.
+- 
